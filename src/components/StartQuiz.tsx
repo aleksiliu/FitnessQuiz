@@ -2,7 +2,8 @@ import React from 'react';
 import { quizData } from '../data/quizdata';
 
 const Quiz = () => {
-
+  console.log('Quiz Data:', quizData);
+  
   return (
     <div>
       {quizData.map((quizItem, index) => (
