@@ -1,41 +1,41 @@
 ---
 const messages: string[] = [
-  "TEST YOUR FITNESS KNOWLEDGE",
-  "DISCOVER NUTRITION FACTS",
-  "CHALLENGE YOUR FITNESS IQ",
-  "LEARN ABOUT EXERCISE TECHNIQUES",
-  "UNDERSTAND MUSCLE GROUPS",
-  "QUIZ ON WORKOUT TERMINOLOGY",
-  "IMPROVE YOUR FITNESS LITERACY",
-  "KNOW THE BENEFITS OF EXERCISE",
-  "IDENTIFY FITNESS MYTHS",
-  "EXPAND YOUR HEALTH KNOWLEDGE"
+  'TEST YOUR FITNESS KNOWLEDGE',
+  'DISCOVER NUTRITION FACTS',
+  'CHALLENGE YOUR FITNESS IQ',
+  'LEARN ABOUT EXERCISE TECHNIQUES',
+  'UNDERSTAND MUSCLE GROUPS',
+  'QUIZ ON WORKOUT TERMINOLOGY',
+  'IMPROVE YOUR FITNESS LITERACY',
+  'KNOW THE BENEFITS OF EXERCISE',
+  'IDENTIFY FITNESS MYTHS',
+  'EXPAND YOUR HEALTH KNOWLEDGE',
 ];
 
 const duplicatedMessages = [...messages, ...messages];
 ---
 
-<div class="absolute inset-x-0 bottom-0 overflow-hidden bg-white text-black py-6 whitespace-nowrap">
-  <div class="flex items-center animate-scroll">
-    {duplicatedMessages.map((message) => (
-      <p class="text-sm font-semibold mx-4">
-        {message} 
-      </p>
-    ))}
+<div
+  class="absolute inset-x-0 bottom-0 overflow-hidden bg-white text-black py-6 whitespace-nowrap"
+>
+  <div
+    class="flex items-center animate-[scroll_10s_linear_infinite] md:animate-[scroll_20s_linear_infinite]"
+  >
+    {
+      duplicatedMessages.map((message) => (
+        <p class="text-sm font-semibold mx-4">{message}</p>
+      ))
+    }
   </div>
 </div>
 
 <style>
-@keyframes scroll {
-  0% {
-    transform: translateX(0%);
+  @keyframes scroll {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
   }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
-.animate-scroll {
-  animation: scroll 20s linear infinite;
-}
 </style>
