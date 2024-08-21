@@ -3,7 +3,7 @@ import { quizData } from '../data/quizdata';
 
 const Quiz = () => {
 
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(10);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [isAnswered, setIsAnswered] = useState(false);
   const [isCorrect, setIsCorrect] = useState(false);
@@ -51,7 +51,10 @@ const Quiz = () => {
 
 return (
     <div className="max-w-4xl">
-      <h2 className="text-4xl mb-8">{currentQuestion.text}</h2>
+      <progress className="[&::-webkit-progress-bar]:rounded-lg [&::-webkit-progress-value]:transition-all [&::-webkit-progress-value]:duration-500 [&::-webkit-progress-value]:rounded-lg mb-4 [&::-webkit-progress-bar]:bg-slate-300 [&::-webkit-progress-value]:bg-orange-500 [&::-moz-progress-bar]:bg-orange-500" value={currentQuestionIndex + 1} max={quizData.length}></progress>
+      <h2 className="text-4xl mb-8">{currentQuestion.text} </h2>
+      <div>
+</div>
       <ul className="grid grid-cols-2 gap-4 ">
         {currentQuestion.options.map((option, index) => (
           <li key={index}> 
