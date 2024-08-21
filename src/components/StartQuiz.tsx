@@ -3,7 +3,7 @@ import { quizData } from '../data/quizdata';
 
 const Quiz = () => {
 
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(10);
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [isAnswered, setIsAnswered] = useState(false);
   const [isCorrect, setIsCorrect] = useState(false);
@@ -42,9 +42,9 @@ const Quiz = () => {
   if (currentQuestionIndex >= quizData.length) {
     return (
       <div>
-        <h2>Quiz Complete!</h2>
-        <p>Your score: {score} out of {quizData.length}</p>
-        <button onClick={handleRestartQuiz}>Restart Quiz</button>
+        <h2 className="text-4xl mb-8">Quiz Complete!</h2>
+        <p className="text-2xl">Your score: {score} out of {quizData.length}</p>
+        <button className="mt-8 px-6 py-4 text-lg bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-full inline-block" onClick={handleRestartQuiz}>Restart Quiz</button>
       </div>
     );
   }
@@ -78,9 +78,9 @@ return (
         <div>
             {isCorrect ? <p className="text-lg mt-4"> Correct!</p> : <p className="text-lg mt-4">Incorrect, the correct answer is "{currentQuestion.correctAnswer}".</p>}
           {currentQuestionIndex < quizData.length - 1 ? (
-             <button className="mt-8 px-6 py-4 text-lg bg-white hover:bg-orange-600 text-gray-700 font-semibold rounded-full inline-block" onClick={handleNextQuestion}>Next Question</button>
+             <button className="mt-8 px-6 py-4 text-lg bg-white text-gray-700 font-semibold rounded-full inline-block" onClick={handleNextQuestion}>Next Question</button>
           ) : (
-            <button className="mt-8 px-6 py-4 text-lg bg-white hover:bg-orange-600 text-gray-700 font-semibold rounded-full inline-block" onClick={() => setCurrentQuestionIndex(currentQuestionIndex + 1)}>Finish Quiz</button>
+            <button className="mt-8 px-6 py-4 text-lg bg-white text-gray-700 font-semibold rounded-full inline-block" onClick={() => setCurrentQuestionIndex(currentQuestionIndex + 1)}>Finish Quiz</button>
           )}
         </div>
       )}
