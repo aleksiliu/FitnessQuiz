@@ -7,6 +7,7 @@ const Quiz = () => {
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [isAnswered, setIsAnswered] = useState(false);
   const [isCorrect, setIsCorrect] = useState(false);
+  const [score, setScore] = useState(0);
 
   const currentQuestion = quizData[currentQuestionIndex];
 
@@ -15,8 +16,12 @@ const Quiz = () => {
   };
 
   const handleSubmit = () => {
-    setIsCorrect(selectedAnswer === currentQuestion.correctAnswer);
+    const correct = selectedAnswer === currentQuestion.correctAnswer;
+    setIsCorrect(correct);
     setIsAnswered(true);
+    if (correct) {
+      setScore(score + 1);
+    }
   };
 
   const handleNextQuestion = () => {
@@ -26,6 +31,23 @@ const Quiz = () => {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
     }
   };
+
+  const handleRestartQuiz = () => {
+    setCurrentQuestionIndex(0);
+    setScore(0);
+    setSelectedAnswer(null);
+    setIsAnswered(false);
+  };
+
+  if (currentQuestionIndex >= quizData.length) {
+    return (
+      <div>
+        <h2>Quiz Complete!</h2>
+        <p>Your score: {score} out of {quizData.length}</p>
+        <button onClick={handleRestartQuiz}>Restart Quiz</button>
+      </div>
+    );
+  }
 
 return (
     <div className="max-w-4xl">
@@ -43,7 +65,6 @@ return (
             />
       <span className='ml-2'>{option}</span>
   </label>
-       
           </li>
         ))}
       </ul>
@@ -52,11 +73,14 @@ return (
           Submit Answer
         </button> 
       )}
-      {isAnswered && (
+
+{isAnswered && (
         <div>
-          {isCorrect ? <p className="text-lg mt-4"> Correct!</p> : <p className="text-lg mt-4">Incorrect, the correct answer is "{currentQuestion.correctAnswer}".</p>}
-          {currentQuestionIndex < quizData.length - 1 && (
-            <button className="mt-8 px-6 py-4 text-lg bg-white hover:bg-orange-600 text-gray-700 font-semibold rounded-full inline-block" onClick={handleNextQuestion}>Next Question</button>
+            {isCorrect ? <p className="text-lg mt-4"> Correct!</p> : <p className="text-lg mt-4">Incorrect, the correct answer is "{currentQuestion.correctAnswer}".</p>}
+          {currentQuestionIndex < quizData.length - 1 ? (
+             <button className="mt-8 px-6 py-4 text-lg bg-white hover:bg-orange-600 text-gray-700 font-semibold rounded-full inline-block" onClick={handleNextQuestion}>Next Question</button>
+          ) : (
+            <button className="mt-8 px-6 py-4 text-lg bg-white hover:bg-orange-600 text-gray-700 font-semibold rounded-full inline-block" onClick={() => setCurrentQuestionIndex(currentQuestionIndex + 1)}>Finish Quiz</button>
           )}
         </div>
       )}
