@@ -21,7 +21,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [https://fitnessquiz.netlify.app/quiz/](https://fitnessquiz.netlify.app/quiz/)
+- Live Site URL: [https://fitnessquiz.netlify.app/](https://fitnessquiz.netlify.app/)
 
 ### Technologies Used
 
