@@ -1,19 +1,19 @@
 ---
 import { Image } from 'astro:assets';
-import bgImage from '../assets/background2.jpg';
+import bgImage from '../assets/background.jpg';
 import ScrollingBanner from '../components/ScrollingBanner.astro';
 ---
 
 <section class="relative h-screen">
   <!-- Background Image -->
-  <Image src={bgImage} alt="Background image" class="absolute inset-0 w-full h-full object-cover bg-black opacity-50" />
+  <Image src={bgImage} alt="Gym background image" class="absolute inset-0 w-full h-full object-cover bg-black opacity-50" />
 
   <!-- Overlay and Content -->
   <div class="container absolute inset-0 flex items-center justify-center">
     <div class="text-center text-white">
-      <h1 class="text-5xl font-bold">NO PAIN NO GAIN</h1>
-      <p class="mt-8">#1 Gym workout tracking app. Progress tracked, workouts personalized - Your all-in-one fitness solution</p>
-      <a href="/quiz/" class="mt-8 px-6 py-4 text-lg bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-full inline-block">Take the test</a>
+      <h1 class="text-6xl font-bold">NO PAIN NO GAIN</h1>
+      <p class="mt-8 text-2xl">Test your fitness knowledge with our interactive quiz! Discover how much you know and get tips to improve - your journey to mastering fitness starts here.</p>
+      <a href="/quiz/" class="mt-8 px-6 py-4 text-lg bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-full inline-block">Start the Quiz Now</a>
     </div>
   </div>
 
