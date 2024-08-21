@@ -5,7 +5,7 @@ interface QuizQuestion {
     correctAnswer: string;
   }
 
-// Create the quiz data array
+
 export const quizData: QuizQuestion[] = [
   {
     id: 1,
