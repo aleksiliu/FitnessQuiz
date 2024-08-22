@@ -58,23 +58,23 @@ const Quiz: React.FC = () => {
   }
 
 return (
-    <div className="max-w-4xl">
-      <progress className="[&::-webkit-progress-bar]:rounded-lg [&::-webkit-progress-value]:transition-all [&::-webkit-progress-value]:duration-500 [&::-webkit-progress-value]:rounded-lg mb-4 [&::-webkit-progress-bar]:bg-slate-300 [&::-webkit-progress-value]:bg-orange-500 [&::-moz-progress-bar]:bg-orange-500" value={currentQuestionIndex + 1} max={quizData.length}></progress>
-      <Question text={currentQuestion.text} />
-      <Options
-        options={currentQuestion.options}
-        selectedAnswer={selectedAnswer}
-        onAnswerSelection={handleAnswerSelection}
-        isAnswered={isAnswered}
-        questionId={currentQuestion.id}
-      />
-      {!isAnswered && (
-        <button className="mt-8 px-6 py-4 text-lg bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-full inline-block" onClick={handleSubmit} disabled={!selectedAnswer}>
-          Submit Answer
-        </button> 
-      )}
+  <div className="max-w-4xl">
+    <progress className="[&::-webkit-progress-bar]:rounded-lg [&::-webkit-progress-value]:transition-all [&::-webkit-progress-value]:duration-500 [&::-webkit-progress-value]:rounded-lg mb-4 [&::-webkit-progress-bar]:bg-slate-300 [&::-webkit-progress-value]:bg-orange-500 [&::-moz-progress-bar]:bg-orange-500" value={currentQuestionIndex + 1} max={quizData.length}></progress>
+    <Question text={currentQuestion.text} />
+    <Options
+      options={currentQuestion.options}
+      selectedAnswer={selectedAnswer}
+      onAnswerSelection={handleAnswerSelection}
+      isAnswered={isAnswered}
+      questionId={currentQuestion.id}
+    />
+    {!isAnswered && (
+      <button className="mt-8 px-6 py-4 text-lg bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-full inline-block" onClick={handleSubmit} disabled={!selectedAnswer}>
+      Submit Answer
+      </button> 
+    )}
 
-{isAnswered && (
+  {isAnswered && (
         <Result
           isCorrect={isCorrect}
           correctAnswer={currentQuestion.correctAnswer}
