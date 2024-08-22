@@ -2,6 +2,11 @@
 
 The Fitness Quiz is an interactive web-based quiz designed to test and enhance users' knowledge about fitness and healthy living. Built with modern web technologies, including React and Astro, the application provides an engaging user experience with dynamically rendered questions, instant feedback, and progress tracking.
 
+### Learning goals
+
+- TypeScript
+- Astro and React
+
 ### The challenge
 
 Users should be able to:
