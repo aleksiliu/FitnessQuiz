@@ -5,9 +5,9 @@ The Fitness Quiz is an interactive web-based quiz designed to test and enhance u
 ### Learning goals
 
 - TypeScript
-- Astro and React
+- How to combine Astro and React
 
-### The challenge
+### Features
 
 Users should be able to:
 
