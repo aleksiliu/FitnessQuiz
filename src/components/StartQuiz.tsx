@@ -61,8 +61,6 @@ return (
     <div className="max-w-4xl">
       <progress className="[&::-webkit-progress-bar]:rounded-lg [&::-webkit-progress-value]:transition-all [&::-webkit-progress-value]:duration-500 [&::-webkit-progress-value]:rounded-lg mb-4 [&::-webkit-progress-bar]:bg-slate-300 [&::-webkit-progress-value]:bg-orange-500 [&::-moz-progress-bar]:bg-orange-500" value={currentQuestionIndex + 1} max={quizData.length}></progress>
       <Question text={currentQuestion.text} />
-      <div>
-      </div>
       <Options
         options={currentQuestion.options}
         selectedAnswer={selectedAnswer}
