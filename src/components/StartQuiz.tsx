@@ -1,13 +1,16 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { quizData } from '../data/quizdata';
 
-const Quiz = () => {
+import Question from './Question.tsx';
+import Options from './Options.tsx';
 
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+const Quiz: React.FC = () => {
+
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [isAnswered, setIsAnswered] = useState(false);
   const [isCorrect, setIsCorrect] = useState(false);
-  const [score, setScore] = useState(0);
+  const [score, setScore] = useState<number>(0);
 
   const currentQuestion = quizData[currentQuestionIndex];
 
@@ -52,25 +55,16 @@ const Quiz = () => {
 return (
     <div className="max-w-4xl">
       <progress className="[&::-webkit-progress-bar]:rounded-lg [&::-webkit-progress-value]:transition-all [&::-webkit-progress-value]:duration-500 [&::-webkit-progress-value]:rounded-lg mb-4 [&::-webkit-progress-bar]:bg-slate-300 [&::-webkit-progress-value]:bg-orange-500 [&::-moz-progress-bar]:bg-orange-500" value={currentQuestionIndex + 1} max={quizData.length}></progress>
-      <h2 className="text-4xl mb-8">{currentQuestion.text} </h2>
+      <Question text={currentQuestion.text} />
       <div>
-</div>
-      <ul className="grid grid-cols-2 gap-4 ">
-        {currentQuestion.options.map((option, index) => (
-          <li key={index}> 
-  <label className="block p-4 border bg-white border-gray-300 rounded-lg cursor-pointer hover:bg-gray-100 text-gray-700">
-  <input
-              type="radio"
-              name={`quiz-option-${currentQuestion.id}`}
-              onChange={() => handleAnswerSelection(option)}
-              checked={selectedAnswer === option}
-              disabled={isAnswered}
-            />
-      <span className='ml-2'>{option}</span>
-  </label>
-          </li>
-        ))}
-      </ul>
+      </div>
+      <Options
+        options={currentQuestion.options}
+        selectedAnswer={selectedAnswer}
+        onAnswerSelection={handleAnswerSelection}
+        isAnswered={isAnswered}
+        questionId={currentQuestion.id}
+      />
       {!isAnswered && (
         <button className="mt-8 px-6 py-4 text-lg bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-full inline-block" onClick={handleSubmit} disabled={!selectedAnswer}>
           Submit Answer
