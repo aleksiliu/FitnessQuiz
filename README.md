@@ -11,13 +11,13 @@ The Fitness Quiz is an interactive web-based quiz designed to test and enhance u
 
 Users should be able to:
 
-- Select and Submit Answers
-- Receive Instant Feedback
-- Navigate Through Questions
-- Track Their Progress
-- View Their Final Score
-- Restart the Quiz
-- Take the Quiz on Any Device
+- Select and submit answers
+- Receive instant feedback
+- Navigate through questions
+- Track their progress
+- View their final Sscore
+- Restart the quiz
+- Take the quiz on any device
 
 ### Screenshot
 
