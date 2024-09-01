@@ -48,7 +48,7 @@ Users should be able to:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/fitness-quiz.git
+   git clone https://github.com/aleksiliu/FitnessQuiz.git
    ```
 2. Navigate to the project directory:
    ```bash
