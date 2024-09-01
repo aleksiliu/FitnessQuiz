@@ -1,3 +1,5 @@
+# Fitness Quiz
+
 ## Overview
 
 The Fitness Quiz is an interactive web-based quiz designed to test and enhance users' knowledge about fitness and healthy living. Built with modern web technologies, including React and Astro, the application provides an engaging user experience with dynamically rendered questions, instant feedback, and progress tracking.
@@ -11,29 +13,52 @@ The Fitness Quiz is an interactive web-based quiz designed to test and enhance u
 
 Users should be able to:
 
-- Select and submit answers
-- Receive instant feedback
-- Navigate through questions
-- Track their progress
-- View their final Sscore
-- Restart the quiz
-- Take the quiz on any device
+- [x] Select and submit answers
+- [x] Receive instant feedback
+- [x] Navigate through questions
+- [x] Track their progress
+- [x] View their final score
+- [x] Restart the quiz
+- [x] Take the quiz on any device
 
-### Screenshot
+### Screenshots
 
-![](./screenshot.png)
-![](./screenshot2.png)
+![Screenshot 1](./screenshot.png)
+![Screenshot 2](./screenshot2.png)
 
-### Links
+### Live Demo
 
-- Live Site URL: [https://fitnessquiz.netlify.app/](https://fitnessquiz.netlify.app/)
+- [Fitness Quiz](https://fitnessquiz.netlify.app/)
 
-### Technologies Used
+## Technologies Used
 
-- Astro: For static site generation and fast, optimized web performance.
 - React
-- Tailwind
+- Astro
+- TypeScript
+- Tailwind CSS
 
-## Author
+## Getting Started
 
-- Website - [Aleksi Liukkonen](https://www.aleksiliukkonen.fi)
+### Prerequisites
+
+- Node.js (v14 or later)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/fitness-quiz.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd fitness-quiz
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+4. Run the development server:
+   ```bash
+   npm run dev
+   ```
